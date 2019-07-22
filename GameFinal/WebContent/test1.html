@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Game Canvas</title>
+<style>
+	*{padding: 0, margin:0;}
+	canvas { background: #eee; display: block; margin:0 auto;}
+</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="480" height="320"></canvas>
+<script>
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	
+	//사각형 빨갛게 칠하기
+	ctx.beginPath();
+	ctx.rect(20,40,50,50); //처음 두 값은 캔버스의 좌상단 모서리로부터 좌표, 나머지는 직사각형의 너비와 높이
+	ctx.fillStyle = "#FF0000"; //색상
+	ctx.fill();
+	ctx.closePath();
+	
+	//초록색 원 그려보기
+	ctx.beginPath();
+	ctx.arc(240,160,20,0,Math.PI*2, false); //원의 중심 x, y좌표, 원의 반지름, 시작 각도, 끝각도(라디안 값), 그리는 방향(false)면 시계 방향으로
+	ctx.fillStyle = "green";
+	ctx.fill();
+	
+	//ctx.strokeStyle = "rgba(?,?,?,?)"; 해서 외곽선을 그릴 수 있다.
+	ctx.closePath();
+	
+	
+	
+	
+</script>
+</body>
+</html>
